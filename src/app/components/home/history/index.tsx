@@ -42,7 +42,7 @@ export default function WhyOptivance() {
               Why Optivance
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-light leading-tight">
+            <h2 className="text-4xl md:text-5xl font-light text-white leading-tight">
               Built with context.
               <span className="block font-normal">
                 Powered with intelligence.

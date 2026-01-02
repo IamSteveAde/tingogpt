@@ -109,33 +109,31 @@ export default function Header() {
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-black/90 backdrop-blur-2xl">
           <nav className="h-full flex flex-col items-center justify-center">
-            <MobileNavItem delay={0} href="/about" onClick={() => setMenuOpen(false)}>
-              About Optivance
+            <MobileNavItem delay={0} href="#about" onClick={() => setMenuOpen(false)}>
+              About
             </MobileNavItem>
 
             <Divider />
 
-            <MobileNavItem delay={1} href="/hire" onClick={() => setMenuOpen(false)}>
-              Hire Workers
+            <MobileNavItem delay={1} href="#why" onClick={() => setMenuOpen(false)}>
+              Why Optivance
             </MobileNavItem>
 
             <Divider />
 
-            <MobileNavItem delay={2} href="/workers" onClick={() => setMenuOpen(false)}>
-              For Workers
-            </MobileNavItem>
-
-            <Divider />
-
-            <MobileNavItem delay={3} href="/industries" onClick={() => setMenuOpen(false)}>
+            <MobileNavItem delay={2} href="#industries" onClick={() => setMenuOpen(false)}>
               Industries
             </MobileNavItem>
 
             <Divider />
 
-            <MobileNavItem delay={4} href="/contact" onClick={() => setMenuOpen(false)}>
-              Contact
+            <MobileNavItem delay={3} href="#contact" onClick={() => setMenuOpen(false)}>
+              Get Started
             </MobileNavItem>
+
+            <Divider />
+
+            
           </nav>
         </div>
       )}

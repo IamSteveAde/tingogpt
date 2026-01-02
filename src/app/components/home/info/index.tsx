@@ -35,7 +35,7 @@ export default function GetStarted() {
               Get Started
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-light leading-tight">
+            <h2 className="text-4xl md:text-5xl text-white font-light leading-tight">
               Ready to build a better
               <span className="block font-normal">
                 workforce with Optivance?

@@ -50,7 +50,7 @@ export default function AIPlatform() {
                 </span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-light leading-tight">
+              <h2 className="text-4xl md:text-5xl font-light leading-tight text-white">
                 Our AI-Powered
                 <span className="block font-normal">
                   WhatsApp Workforce Platform
