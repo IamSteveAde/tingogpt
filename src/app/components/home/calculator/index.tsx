@@ -1,109 +1,94 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Hotel,
-  Utensils,
-  HardHat,
-  Factory,
-  ShoppingCart,
-  Truck,
-  Globe2,
-} from "lucide-react";
+import { ArrowRight, Mail, Globe } from "lucide-react";
 
-export default function IndustriesAndVision() {
+export default function GetStarted() {
   return (
-    <section className="relative bg-white overflow-hidden" id="industries">
-      <div className="relative z-10 py-32">
-        <div className="container mx-auto px-6 lg:max-w-screen-xl">
-          <div className="grid lg:grid-cols-12 gap-20 items-start">
-            {/* ================= INDUSTRIES ================= */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-6"
-            >
-              <span className="block text-[11px] tracking-[0.4em] uppercase text-[#5f3b86] mb-6">
-                Industries We Serve
-              </span>
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#0A1A3A] via-[#0E2A47] to-[#F97316] py-32" id="contact">
+      {/* ===== Background Glow & Orbits ===== */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-blue-500/30 blur-[140px]" />
+        <div className="absolute bottom-[-200px] right-[-200px] h-[600px] w-[600px] rounded-full bg-orange-500/30 blur-[140px]" />
 
-              <h2 className="text-4xl font-light leading-tight text-black mb-10">
-                Supporting Africa’s
-                <span className="block font-normal text-[#5f3b86]">
-                  essential industries
-                </span>
-              </h2>
+        <div className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+      </div>
 
-              <div className="grid sm:grid-cols-2 gap-6">
-                <Industry icon={<Hotel />} label="Hospitality & Tourism" />
-                <Industry icon={<Utensils />} label="Food & Beverage" />
-                <Industry icon={<HardHat />} label="Construction & Real Estate" />
-                <Industry icon={<Factory />} label="Manufacturing" />
-                <Industry icon={<ShoppingCart />} label="Retail & Supermarkets" />
-                <Industry icon={<Truck />} label="Logistics & Warehousing" />
-              </div>
-            </motion.div>
+      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+        {/* ===== Headline ===== */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-semibold leading-tight text-white md:text-5xl"
+        >
+          Get Started with
+          <span className="bg-gradient-to-r from-orange-300 to-orange-500 bg-clip-text text-transparent">
+            {" "}TingoGPT
+          </span>
+        </motion.h2>
 
-            {/* ================= VISION ================= */}
-            <motion.div
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-6"
-            >
-              <span className="block text-[11px] tracking-[0.4em] uppercase text-black/50 mb-6">
-                Our Vision
-              </span>
+        {/* ===== Subtext ===== */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mx-auto mt-6 max-w-3xl text-lg text-slate-200"
+        >
+          Whether you are modernizing operations, scaling intelligence,
+          or transforming service delivery—TingoGPT is your AI partner.
+        </motion.p>
 
-              <div className="rounded-3xl border border-black/5 p-10 shadow-[0_30px_90px_rgba(0,0,0,0.06)]">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="h-11 w-11 rounded-xl bg-[#5f3b86]/10 text-[#5f3b86] flex items-center justify-center">
-                    <Globe2 />
-                  </div>
-                  <h3 className="text-2xl font-light text-black">
-                    Building Africa’s workforce infrastructure
-                  </h3>
-                </div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-4 text-xl font-medium text-white"
+        >
+          Let’s build AI that delivers results.
+        </motion.p>
 
-                <p className="text-black/70 leading-relaxed text-lg mb-6">
-                  To become Africa’s most trusted blue-collar workforce
-                  platform, connecting millions of workers to dignified jobs
-                  while helping businesses grow with confidence.
-                </p>
+        {/* ===== CTA Button ===== */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-12 flex justify-center"
+        >
+          <a
+            href="mailto:enterprise@tingogpt.ai"
+            className="inline-flex items-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-slate-900 shadow-lg transition hover:scale-[1.03]"
+          >
+            Contact Enterprise Team
+            <ArrowRight size={20} />
+          </a>
+        </motion.div>
 
-                <p className="text-black/60 leading-relaxed">
-                  Optivance HR Africa is building the long-term infrastructure
-                  for Africa’s workforce economy — responsibly, inclusively,
-                  and at scale.
-                </p>
-              </div>
-            </motion.div>
+        {/* ===== Contact Info ===== */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-10 flex flex-col items-center gap-3 text-slate-200 sm:flex-row sm:justify-center sm:gap-8"
+        >
+          <div className="flex items-center gap-2">
+            <Mail size={16} />
+            <span>enterprise@tingogpt.ai</span>
           </div>
-        </div>
+
+          <div className="hidden h-4 w-px bg-white/30 sm:block" />
+
+          <div className="flex items-center gap-2">
+            <Globe size={16} />
+            <span>www.tingogpt.ai</span>
+          </div>
+        </motion.div>
       </div>
     </section>
-  );
-}
-
-/* -------------------------------------
-   INDUSTRY ITEM
-------------------------------------- */
-function Industry({
-  icon,
-  label,
-}: {
-  icon: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <div className="flex items-center gap-4">
-      <div className="h-10 w-10 rounded-xl bg-black/5 text-black flex items-center justify-center">
-        {icon}
-      </div>
-      <span className="text-black/80 text-sm">{label}</span>
-    </div>
   );
 }

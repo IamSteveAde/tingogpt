@@ -8,61 +8,65 @@ import Listing from "./components/home/property-list";
 import Testimonials from "./components/home/testimonial";
 import History from "./components/home/history";
 import Calculator from "./components/home/calculator";
-import Info from "./components/home/info";
+
 
 // Global components
-import AudioWelcome from "./components/AudioWelcome";
+
 
 /* -------------------------------------
    METADATA — OPTIVANCE HR AFRICA
 ------------------------------------- */
 export const metadata: Metadata = {
-  metadataBase: new URL("https://optivancehr.africa"),
-
+  metadataBase: new URL("https://www.tingogpt.ai"),
   title: {
-    default: "Optivance HR Africa",
-    template: "%s | Optivance HR Africa",
+    default: "TingoGPT",
+    template: "%s | TingoGPT",
   },
 
   description:
-    "Optivance HR Africa is an AI-powered workforce platform helping businesses hire, train, certify, and manage blue-collar workers — all through WhatsApp.",
+    "TingoGPT is an enterprise-grade AI platform designed to move beyond conversation into execution, decision intelligence, and real-world problem solving for enterprises, governments, and institutions.",
 
   keywords: [
-    "Optivance HR Africa",
-    "blue collar recruitment Africa",
-    "workforce management Africa",
-    "HR platform Africa",
-    "WhatsApp HR platform",
-    "blue collar jobs Africa",
-    "AI workforce platform",
-    "staff recruitment and payroll",
-    "worker training and certification",
-    "HR compliance Africa",
+    "TingoGPT",
+    "enterprise AI platform",
+    "decision intelligence",
+    "agentic AI",
+    "AI execution platform",
+    "enterprise artificial intelligence",
+    "government AI systems",
+    "regulated AI platform",
+    "AI governance and compliance",
+    "enterprise workflow automation",
+    "AI for financial services",
+    "AI for healthcare systems",
+    "AI for government and public sector",
+    "AI operating system",
+    "sovereign AI platform",
   ],
 
   openGraph: {
-    title: "Optivance HR Africa",
+    title: "TingoGPT — AI That Solves Real Problems",
     description:
-      "Hire, train, certify, and manage trusted blue-collar workers — powered by AI and delivered through WhatsApp.",
-    url: "https://optivancehr.africa",
-    siteName: "Optivance HR Africa",
+      "An execution-first, enterprise-grade AI platform that transforms data into decisions—and decisions into measurable outcomes.",
+    url: "https://www.tingogpt.ai",
+    siteName: "TingoGPT",
     type: "website",
     images: [
       {
-        url: "https://optivancehr.africa/og/og-cover.jpg",
+        url: "https://www.tingogpt.ai/og/og-cover.jpg",
         width: 1200,
         height: 630,
-        alt: "Optivance HR Africa — AI-Powered Workforce Platform",
+        alt: "TingoGPT — Enterprise AI for Decision and Execution",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Optivance HR Africa",
+    title: "TingoGPT — Enterprise AI That Acts",
     description:
-      "The AI-powered workforce platform for hiring and managing blue-collar workers across Africa.",
-    images: ["https://optivancehr.africa/og/og-cover.jpg"],
+      "TingoGPT is built for enterprises, governments, and regulated industries that need AI to deliver real-world outcomes.",
+    images: ["https://www.tingogpt.ai/og/og-cover.jpg"],
   },
 
   robots: {
@@ -71,7 +75,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://optivancehr.africa",
+    canonical: "https://www.tingogpt.ai",
   },
 };
 
@@ -82,7 +86,7 @@ export default function Home() {
   return (
     <main>
       {/* Audio welcome — brief, professional, plays once per visit */}
-      <AudioWelcome />
+      
 
       {/* Core hero & positioning */}
       <Hero />
@@ -100,7 +104,7 @@ export default function Home() {
       {/* Company journey, capability & infrastructure */}
       <History />
       <Calculator />
-      <Info />
+      
     </main>
   );
 }

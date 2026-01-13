@@ -2,124 +2,165 @@
 
 import { motion } from "framer-motion";
 import {
-  Bot,
-  Users,
-  BookOpen,
-  ClipboardCheck,
-  BadgeCheck,
-  Wallet,
-  FileCheck,
-  Shield,
-  BarChart3,
+  Brain,
+  Database,
+  Network,
+  PlayCircle,
+  ShieldCheck,
+  Workflow,
+  LineChart,
+  CheckCircle,
+  UserCheck,
+  FileSearch,
 } from "lucide-react";
 
-export default function AIPlatform() {
-  return (
-    <section className="relative overflow-hidden">
-      {/* PURPLE GRADIENT BACKGROUND */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(135deg, #2a123f 0%, #5f3b86 45%, #7b4db3 100%)",
-        }}
-      />
+const steps = [
+  {
+    step: "01",
+    icon: Brain,
+    title: "Contextual Intelligence",
+    description:
+      "TingoGPT understands industry logic, operational constraints, geography, and regulation—ensuring outputs are relevant and actionable.",
+  },
+  {
+    step: "02",
+    icon: Database,
+    title: "Enterprise Data Integration",
+    description:
+      "Secure connections to ERP, CRM, core banking, HR, IoT, and proprietary systems ground intelligence in real enterprise data.",
+  },
+  {
+    step: "03",
+    icon: Network,
+    title: "Agentic AI Framework",
+    description:
+      "Specialized AI agents collaborate to analyze data, assess risk and compliance, execute tasks, verify outcomes, and report results.",
+  },
+  {
+    step: "04",
+    icon: PlayCircle,
+    title: "Decision & Execution Engine",
+    description:
+      "From insight to action—automated or human-approved—TingoGPT ensures decisions move forward with speed and control.",
+  },
+  {
+    step: "05",
+    icon: ShieldCheck,
+    title: "Governance & Security Layer",
+    description:
+      "Built-in controls for auditability, explainability, data sovereignty, and regulatory compliance.",
+  },
+];
 
-      {/* SOFT AI FLOW LINES */}
-      <div className="absolute inset-0 pointer-events-none opacity-30">
-        <div className="absolute top-0 left-1/4 h-full w-[1px] bg-gradient-to-b from-transparent via-white to-transparent" />
-        <div className="absolute top-0 left-2/4 h-full w-[1px] bg-gradient-to-b from-transparent via-white to-transparent" />
-        <div className="absolute top-0 left-3/4 h-full w-[1px] bg-gradient-to-b from-transparent via-white to-transparent" />
+const capabilities = [
+  { icon: Workflow, label: "Enterprise Workflow Automation" },
+  { icon: LineChart, label: "Decision Intelligence" },
+  { icon: Network, label: "Agentic AI Execution" },
+  { icon: CheckCircle, label: "Real-Time Analytics" },
+  { icon: UserCheck, label: "Human-in-the-Loop Controls" },
+  { icon: FileSearch, label: "Audit-Ready AI Outputs" },
+  { icon: ShieldCheck, label: "Regulatory Compliance by Design" },
+];
+
+export default function HowTingoGPTWorks() {
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#050B1E] via-[#0A1A3A] to-[#0E2A47] py-32" id="how-it-works">
+      {/* ===== AI Background Orbits ===== */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-[-300px] h-[800px] w-[800px] -translate-x-1/2 rounded-full border border-blue-400/20" />
+        <div className="absolute right-[-300px] top-1/3 h-[700px] w-[700px] rounded-full border border-orange-400/20" />
+        <div className="absolute bottom-[-300px] left-[-300px] h-[700px] w-[700px] rounded-full border border-blue-400/10" />
       </div>
 
-      <div className="relative z-10 py-32">
-        <div className="container mx-auto px-6 lg:max-w-screen-xl">
-          <div className="grid lg:grid-cols-12 gap-20 items-start">
-            {/* LEFT — EXPLANATION */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        {/* ===== Header ===== */}
+        <div className="mx-auto max-w-3xl text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-sm font-semibold uppercase tracking-widest text-blue-300"
+          >
+            How TingoGPT Works
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-6 text-3xl font-semibold leading-tight text-white md:text-4xl"
+          >
+            Intelligence Engineered
+            <br />
+            <span className="bg-gradient-to-r from-orange-400 to-blue-400 bg-clip-text text-transparent">
+              For Real-World Execution
+            </span>
+          </motion.p>
+        </div>
+
+        {/* ===== Steps ===== */}
+        <div className="mt-24 grid gap-10 lg:grid-cols-2">
+          {steps.map((step, index) => (
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
+              key={step.step}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-5 space-y-8 text-white"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="relative rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur"
             >
-              <div className="flex items-center gap-3 text-white/80">
-                <Bot size={18} />
-                <span className="text-[11px] tracking-[0.4em] uppercase">
-                  AI-Powered Platform
-                </span>
+              <div className="absolute right-6 top-6 text-6xl font-bold text-white/5">
+                {step.step}
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-light leading-tight text-white">
-                Our AI-Powered
-                <span className="block font-normal">
-                  WhatsApp Workforce Platform
-                </span>
-              </h2>
-
-              <p className="text-white/80 leading-relaxed text-lg max-w-md">
-                Optivance is building an AI-first workforce platform on WhatsApp,
-                designed for accessibility, scale, and speed.
-              </p>
-
-              <p className="text-white/70 leading-relaxed max-w-md">
-                Workers and employers interact with Optivance through an AI agent
-                on WhatsApp — no apps, no complexity.
-              </p>
-
-              <p className="pt-6 text-white font-medium text-lg">
-                If you can use WhatsApp, you can use Optivance.
-              </p>
-            </motion.div>
-
-            {/* RIGHT — AI CAPABILITIES */}
-            <motion.div
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-7"
-            >
-              <div className="rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-10">
-                <h3 className="text-sm tracking-[0.3em] uppercase text-white/80 mb-8">
-                  What the AI Agent Does
-                </h3>
-
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <Capability icon={<Users />} text="Screens and recruits workers" />
-                  <Capability icon={<BookOpen />} text="Delivers training and learning modules" />
-                  <Capability icon={<ClipboardCheck />} text="Conducts skills tests and assessments" />
-                  <Capability icon={<BadgeCheck />} text="Issues digital certifications" />
-                  <Capability icon={<Wallet />} text="Manages payroll and pays salaries" />
-                  <Capability icon={<FileCheck />} text="Handles tax deductions and compliance" />
-                  <Capability icon={<Shield />} text="Provides insurance onboarding and coverage" />
-                  <Capability icon={<BarChart3 />} text="Tracks deployment, attendance, and performance" />
-                </div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-blue-500 text-white">
+                <step.icon size={22} />
               </div>
+
+              <h3 className="mt-6 text-xl font-semibold text-white">
+                {step.title}
+              </h3>
+
+              <p className="mt-4 text-slate-300 leading-relaxed">
+                {step.description}
+              </p>
             </motion.div>
+          ))}
+        </div>
+
+        {/* ===== Key Capabilities ===== */}
+        <div className="mt-32">
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center text-3xl font-semibold text-white"
+          >
+            Key Capabilities
+          </motion.h3>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {capabilities.map((capability, index) => (
+              <motion.div
+                key={capability.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur"
+              >
+                <capability.icon className="text-orange-400" size={20} />
+                <span className="text-slate-200">
+                  {capability.label}
+                </span>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-/* -------------------------------------
-   CAPABILITY ITEM
-------------------------------------- */
-function Capability({
-  icon,
-  text,
-}: {
-  icon: React.ReactNode;
-  text: string;
-}) {
-  return (
-    <div className="flex items-start gap-4">
-      <div className="h-10 w-10 rounded-xl bg-white/15 text-white flex items-center justify-center">
-        {icon}
-      </div>
-      <span className="text-white/85 text-sm leading-relaxed">{text}</span>
-    </div>
   );
 }

@@ -1,16 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-
-/* -------------------------------------
-   BRAND COLORS
-------------------------------------- */
-const BRAND = {
-  purple: "#5f3b86",
-  teal: "#61abbb",
-};
 
 export default function Header() {
   const [onDark, setOnDark] = useState(false);
@@ -52,35 +45,41 @@ export default function Header() {
         className={`
           fixed top-0 left-0 w-full z-50
           backdrop-blur-xl
-          bg-white/80
           transition-colors duration-300
-          ${onDark ? "text-white" : "text-black"}
+          ${onDark ? "bg-black/40 text-white" : "bg-white/80 text-black"}
         `}
       >
         <div className="container mx-auto px-6 lg:max-w-screen-xl">
           <div className="flex items-center justify-between h-20">
-            {/* LOGO — TEXT */}
-            <Link href="/" className="z-50 flex items-center">
-              <span
-                className="text-sm tracking-[0.25em] uppercase font-light"
-                style={{
-                  textShadow: onDark
-                    ? "0 4px 20px rgba(0,0,0,0.45)"
-                    : "0 4px 20px rgba(0,0,0,0.25)",
-                }}
-              >
-                <span style={{ color: BRAND.purple }}>Optivance</span>{" "}
-                <span style={{ color: BRAND.teal }}>HR Africa</span>
-              </span>
+            {/* LOGO */}
+            <Link href="/" className="z-50 flex items-center gap-3">
+              <Image
+                src="/images/logo/gpt.svg"
+                alt="TingoGPT"
+                width={200}
+                height={28}
+                className="opacity-90"
+              />
+              
             </Link>
 
             {/* DESKTOP NAV */}
             <nav className="hidden md:flex items-center gap-10">
-              <NavItem onDark={onDark} href="#about">About</NavItem>
-              
-              <NavItem onDark={onDark} href="#why">Why Optivance</NavItem>
-              <NavItem onDark={onDark} href="#industries">Industries</NavItem>
-              <NavItem onDark={onDark} href="#contact">Get Started</NavItem>
+              <NavItem onDark={onDark} href="#about">
+                About
+              </NavItem>
+              <NavItem onDark={onDark} href="#how-it-works">
+                How It Works
+              </NavItem>
+              <NavItem onDark={onDark} href="#industries">
+                Industries
+              </NavItem>
+              <NavItem onDark={onDark} href="#security">
+                Security
+              </NavItem>
+              <NavItem onDark={onDark} href="#contact">
+                Get Started
+              </NavItem>
             </nav>
 
             {/* MOBILE TOGGLE BUTTON */}
@@ -110,30 +109,32 @@ export default function Header() {
         <div className="fixed inset-0 z-40 bg-black/90 backdrop-blur-2xl">
           <nav className="h-full flex flex-col items-center justify-center">
             <MobileNavItem delay={0} href="#about" onClick={() => setMenuOpen(false)}>
-              About Optivance
+              About TingoGPT
             </MobileNavItem>
 
             <Divider />
 
-            <MobileNavItem delay={1} href="#why" onClick={() => setMenuOpen(false)}>
-              Why Optivance
+            <MobileNavItem delay={1} href="#how-it-works" onClick={() => setMenuOpen(false)}>
+              How It Works
             </MobileNavItem>
 
             <Divider />
 
             <MobileNavItem delay={2} href="#industries" onClick={() => setMenuOpen(false)}>
-              Industries
+              Industry Solutions
             </MobileNavItem>
 
             <Divider />
 
-            <MobileNavItem delay={3} href="#contact" onClick={() => setMenuOpen(false)}>
+            <MobileNavItem delay={3} href="#security" onClick={() => setMenuOpen(false)}>
+              Security & Governance
+            </MobileNavItem>
+
+            <Divider />
+
+            <MobileNavItem delay={4} href="#contact" onClick={() => setMenuOpen(false)}>
               Get Started
             </MobileNavItem>
-
-            <Divider />
-
-            
           </nav>
         </div>
       )}
@@ -159,7 +160,11 @@ function NavItem({
     ${onDark ? "text-white/90 hover:text-white" : "text-black/85 hover:text-black"}
   `;
 
-  return <Link href={href} className={className}>{children}</Link>;
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  );
 }
 
 /* ======================================================

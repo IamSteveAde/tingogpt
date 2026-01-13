@@ -2,132 +2,182 @@
 
 import { motion } from "framer-motion";
 import {
-  GraduationCap,
-  ClipboardCheck,
-  ShieldCheck,
-  Award,
-  Wallet,
-  FileCheck,
-  HeartPulse,
   Building2,
+  Zap,
+  Layers3,
+  ShieldCheck,
+  Cloud,
+  Server,
+  HardDrive,
+  Network,
+  Lock,
+  Key,
+  FileCheck,
+  Scale,
 } from "lucide-react";
 
-export default function TrainingAndPayroll() {
+const differentiators = [
+  {
+    icon: Building2,
+    title: "Built for Enterprises",
+    description:
+      "Designed for scale, uptime, and mission-critical environments—not consumer experimentation.",
+    gradient: "from-blue-500/20 via-blue-400/10 to-transparent",
+  },
+  {
+    icon: Zap,
+    title: "Action-Oriented AI",
+    description:
+      "We don’t stop at insights. TingoGPT executes workflows and drives real outcomes.",
+    gradient: "from-orange-500/20 via-orange-400/10 to-transparent",
+  },
+  {
+    icon: Layers3,
+    title: "Industry-Aware Intelligence",
+    description:
+      "Domain-specific logic ensures relevance across regulated and complex sectors.",
+    gradient: "from-indigo-500/20 via-indigo-400/10 to-transparent",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Sovereign & Secure",
+    description:
+      "Data residency, compliance controls, and explainable AI are foundational—not optional.",
+    gradient: "from-emerald-500/20 via-emerald-400/10 to-transparent",
+  },
+];
+
+const deployments = [
+  { icon: Cloud, label: "Cloud (Enterprise SaaS)" },
+  { icon: Server, label: "Private Cloud" },
+  { icon: HardDrive, label: "On-Premise" },
+  { icon: Network, label: "Hybrid Architecture" },
+];
+
+const security = [
+  { icon: Lock, label: "End-to-end encryption" },
+  { icon: Key, label: "Role-based access control" },
+  { icon: FileCheck, label: "Immutable audit logs" },
+  { icon: Scale, label: "Policy-driven AI behavior" },
+];
+
+export default function WhatMakesUsDifferent() {
   return (
-    <section className="relative bg-white overflow-hidden">
-      <div className="relative z-10 py-32">
-        <div className="container mx-auto px-6 lg:max-w-screen-xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
-            {/* ================= TRAINING & CERTIFICATION ================= */}
+    <section className="relative bg-white py-32" id="security">
+      <div className="mx-auto max-w-7xl px-6">
+        {/* ===== Header ===== */}
+        <div className="mx-auto max-w-3xl text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-sm font-semibold uppercase tracking-widest text-blue-600"
+          >
+            What Makes Us Different
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-6 text-3xl font-semibold text-slate-900 md:text-4xl"
+          >
+            Enterprise AI,
+            <span className="bg-gradient-to-r from-orange-500 to-blue-500 bg-clip-text text-transparent">
+              {" "}Engineered for Reality
+            </span>
+          </motion.p>
+        </div>
+
+        {/* ===== Differentiators ===== */}
+        <div className="mt-20 grid gap-8 md:grid-cols-2">
+          {differentiators.map((item, index) => (
             <motion.div
-              initial={{ opacity: 0, y: 28 }}
+              key={item.title}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-3xl border border-black/5 p-10 shadow-[0_30px_90px_rgba(0,0,0,0.06)]"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`relative rounded-2xl border border-slate-200 bg-gradient-to-br ${item.gradient} p-8 backdrop-blur`}
             >
-              <span className="block text-[11px] tracking-[0.4em] uppercase text-[#5f3b86] mb-4">
-                Training & Certification
-              </span>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm">
+                <item.icon className="text-blue-600" size={22} />
+              </div>
 
-              <h3 className="text-3xl font-light text-black leading-tight">
-                Skills that employers trust.
-                <span className="block font-normal text-[#5f3b86]">
-                  Credentials workers carry.
-                </span>
+              <h3 className="mt-6 text-xl font-semibold text-slate-900">
+                {item.title}
               </h3>
 
-              <p className="mt-6 text-black/70 leading-relaxed max-w-md">
-                Optivance delivers AI-optimized training programs tailored to
-                each role, ensuring workers are prepared, tested, and job-ready.
+              <p className="mt-4 text-slate-700">
+                {item.description}
               </p>
-
-              <ul className="mt-8 space-y-4">
-                <Item icon={<GraduationCap />} text="Hospitality & customer service" />
-                <Item icon={<ShieldCheck />} text="Hygiene, safety, and compliance" />
-                <Item icon={<ClipboardCheck />} text="Trade-specific technical skills" />
-                <Item icon={<Award />} text="Workplace ethics and conduct" />
-              </ul>
-
-              <div className="mt-8 border-t border-black/10 pt-6 space-y-3">
-                <p className="text-black/70 text-sm">
-                  Workers earn verifiable digital certificates that:
-                </p>
-                <ul className="space-y-2 text-sm text-black/60">
-                  <li>• Prove real competence</li>
-                  <li>• Increase employability</li>
-                  <li>• Travel with the worker across jobs</li>
-                </ul>
-              </div>
             </motion.div>
+          ))}
+        </div>
 
-            {/* ================= PAYROLL, TAX & INSURANCE ================= */}
-            <motion.div
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-3xl border border-black/5 p-10 shadow-[0_30px_90px_rgba(0,0,0,0.06)]"
-            >
-              <span className="block text-[11px] tracking-[0.4em] uppercase text-[#61abbb] mb-4">
-                Payroll, Tax & Insurance
-              </span>
+        {/* ===== Deployment + Security ===== */}
+        <div className="mt-28 grid gap-10 lg:grid-cols-2">
+          {/* Deployment Options */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="rounded-2xl border border-slate-200 bg-gradient-to-br from-blue-500/10 via-white to-orange-500/10 p-10"
+          >
+            <h3 className="text-2xl font-semibold text-slate-900">
+              Deployment Options
+            </h3>
 
-              <h3 className="text-3xl font-light text-black leading-tight">
-                We don’t stop at hiring.
-                <span className="block font-normal text-[#61abbb]">
-                  We manage employment end to end.
-                </span>
-              </h3>
+            <p className="mt-3 text-slate-600">
+              You stay in control of your data, models, and access.
+            </p>
 
-              <p className="mt-6 text-black/70 leading-relaxed max-w-md">
-                Optivance manages the full employment lifecycle — removing
-                administrative burden from businesses and protecting workers.
-              </p>
-
-              <ul className="mt-8 space-y-4">
-                <Item icon={<Wallet />} text="Salary payments" />
-                <Item icon={<FileCheck />} text="PAYE and statutory tax deductions" />
-                <Item icon={<Building2 />} text="Pension and compliance support" />
-                <Item icon={<HeartPulse />} text="Health and accident insurance" />
-              </ul>
-
-              <div className="mt-10 grid grid-cols-2 gap-6">
-                <div>
-                  <p className="text-sm font-medium text-black">
-                    Businesses stay compliant.
-                  </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {deployments.map((item) => (
+                <div
+                  key={item.label}
+                  className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4"
+                >
+                  <item.icon className="text-orange-500" size={18} />
+                  <span className="text-slate-700">{item.label}</span>
                 </div>
-                <div>
-                  <p className="text-sm font-medium text-black">
-                    Workers stay protected.
-                  </p>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Security & Compliance */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="rounded-2xl border border-slate-200 bg-gradient-to-br from-emerald-500/10 via-white to-blue-500/10 p-10"
+          >
+            <h3 className="text-2xl font-semibold text-slate-900">
+              Security & Compliance
+            </h3>
+
+            <p className="mt-3 text-slate-600">
+              Built to meet enterprise and government standards.
+            </p>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {security.map((item) => (
+                <div
+                  key={item.label}
+                  className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4"
+                >
+                  <item.icon className="text-emerald-600" size={18} />
+                  <span className="text-slate-700">{item.label}</span>
                 </div>
-              </div>
-            </motion.div>
-          </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
-  );
-}
-
-/* -------------------------------------
-   ITEM
-------------------------------------- */
-function Item({
-  icon,
-  text,
-}: {
-  icon: React.ReactNode;
-  text: string;
-}) {
-  return (
-    <li className="flex items-start gap-4">
-      <div className="h-10 w-10 rounded-xl bg-black/5 text-black flex items-center justify-center">
-        {icon}
-      </div>
-      <span className="text-black/80 text-sm leading-relaxed">{text}</span>
-    </li>
   );
 }

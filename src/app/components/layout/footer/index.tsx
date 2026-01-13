@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -12,17 +13,22 @@ export default function Footer() {
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           {/* ================= BRAND ================= */}
           <div className="lg:col-span-4 space-y-6">
-            <span
-              className="block text-sm tracking-[0.35em] uppercase text-white font-light"
-              style={{ textShadow: "0 4px 20px rgba(0,0,0,0.35)" }}
-            >
-              Optivance HR Africa
-            </span>
+            {/* Logo */}
+            <div className="flex items-center gap-3">
+              <Image
+                src="/images/logo/gpt.svg"
+                alt="TingoGPT"
+                width={250}
+                height={36}
+                className="opacity-90"
+              />
+              
+            </div>
 
             <p className="text-white/60 text-sm leading-relaxed max-w-sm">
-              Optivance HR Africa is an AI-powered workforce platform helping
-              businesses hire, train, certify, and manage blue-collar workers —
-              all through WhatsApp.
+              TingoGPT is an execution-first, enterprise-grade AI platform built
+              to help organizations turn data into decisions—and decisions into
+              measurable outcomes.
             </p>
           </div>
 
@@ -35,50 +41,62 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <Link href="#about" className="text-white/70 hover:text-white transition">
-                  About Optivance
+                  About TingoGPT
                 </Link>
               </li>
               <li>
-                <Link href="#why" className="text-white/70 hover:text-white transition">
-                  Why Optivance
+                <Link href="#how-it-works" className="text-white/70 hover:text-white transition">
+                  How It Works
                 </Link>
               </li>
               <li>
                 <Link href="#industries" className="text-white/70 hover:text-white transition">
-                  Industries
+                  Industry Solutions
                 </Link>
               </li>
-              
+              <li>
+                <Link href="#security" className="text-white/70 hover:text-white transition">
+                  Security & Governance
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* ================= TRUST & CONTACT ================= */}
           <div className="lg:col-span-4 space-y-6">
             <span className="block text-[11px] tracking-[0.3em] uppercase text-white/40">
-              Trust & Support
+              Trust & Contact
             </span>
 
             <p className="text-white/70 text-sm leading-relaxed max-w-sm">
-              Built for compliance, reliability, and long-term workforce
-              development. We work with employers, workers, and partners across
-              Africa to build a safer, more dignified labour economy.
+              Built for enterprises, governments, and institutions operating in
+              complex and regulated environments. Designed with security,
+              sovereignty, and auditability at its core.
             </p>
 
             <div className="space-y-3 text-sm">
-              <Link
-                href="#contact"
+              <a
+                href="mailto:enterprise@tingogpt.ai"
                 className="block text-white/70 hover:text-white transition"
               >
-                Contact Us
-              </Link>
-              
+                enterprise@tingogpt.ai
+              </a>
+
+              <a
+                href="https://www.tingogpt.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-white/70 hover:text-white transition"
+              >
+                www.tingogpt.ai
+              </a>
             </div>
           </div>
         </div>
 
         {/* ================= BOTTOM LINE ================= */}
         <div className="mt-20 text-center text-white/40 text-xs tracking-wide">
-          © {new Date().getFullYear()} Optivance HR Africa. All rights reserved.
+          © {new Date().getFullYear()} TingoGPT. All rights reserved.
         </div>
       </div>
     </footer>
