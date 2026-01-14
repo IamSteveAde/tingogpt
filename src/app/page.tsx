@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 // Home sections
 import Hero from "./components/home/hero";
+import Chatbot from "./components/ChatbotEmbed";
 import About from "./components/home/about";
 import DiscoverProperties from "./components/home/property-option"; // mentor / platform section
 import Listing from "./components/home/property-list";
@@ -104,6 +105,7 @@ export default function Home() {
       {/* Company journey, capability & infrastructure */}
       <History />
       <Calculator />
+       <Chatbot />
       
     </main>
   );

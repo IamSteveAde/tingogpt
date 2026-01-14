@@ -6,21 +6,14 @@ import { ThemeProvider } from "next-themes";
 import NextTopLoader from "nextjs-toploader";
 
 import { AppContextProvider } from "../context-api/PropertyContext";
-
+import ChatbotEmbed from "./components/ChatbotEmbed";
 import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
 import ScrollToTop from "./components/scroll-to-top";
 import Aoscompo from "@/utils/aos";
 
-
-/* -------------------------------------
-   FONT
-------------------------------------- */
 const dmsans = DM_Sans({ subsets: ["latin"] });
 
-/* -------------------------------------
-   METADATA — DIGITAL INCLUSION INITIATIVE
-------------------------------------- */
 export const metadata: Metadata = {
   title: {
     default: "Digital Inclusion Initiative",
@@ -30,23 +23,16 @@ export const metadata: Metadata = {
     "Digital Inclusion Initiative works to expand digital access, build skills, and create opportunities for women and underserved communities through technology.",
 };
 
-/* -------------------------------------
-   ROOT LAYOUT
-------------------------------------- */
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={dmsans.className}>
         <AppContextProvider>
-          <ThemeProvider
-            attribute="class"
-            enableSystem={false}
-            defaultTheme="light"
-          >
+          <ThemeProvider attribute="class" defaultTheme="light">
             <Aoscompo>
               <Header />
               <NextTopLoader />
@@ -54,10 +40,8 @@ export default function RootLayout({
               <Footer />
             </Aoscompo>
 
-            
-
-            {/* Global Chat Widget */}
-            
+            {/* ✅ Global Chatbot */}
+            <ChatbotEmbed />
           </ThemeProvider>
         </AppContextProvider>
       </body>

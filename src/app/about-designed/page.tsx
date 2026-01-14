@@ -60,7 +60,7 @@ const industries = [
 
 export default function IndustrySolutions() {
   return (
-    <section className="relative overflow-hidden bg-white py-32" id="industries">
+    <section className="relative overflow-hidden bg-white py-32">
       {/* ===== Orbit Background ===== */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div className="relative h-[700px] w-[700px]">
