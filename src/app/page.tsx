@@ -9,6 +9,7 @@ import Listing from "./components/home/property-list";
 import Testimonials from "./components/home/testimonial";
 import History from "./components/home/history";
 import Calculator from "./components/home/calculator";
+import Info from "./components/home/info";
 
 
 // Global components
@@ -104,7 +105,9 @@ export default function Home() {
 
       {/* Company journey, capability & infrastructure */}
       <History />
+      <Info />
       <Calculator />
+      
        <Chatbot />
       
     </main>
